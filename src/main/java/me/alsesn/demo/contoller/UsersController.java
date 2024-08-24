@@ -21,8 +21,9 @@ public class UsersController {
     }
 
     @PostMapping("save_user")
-    public User saveUser(@RequestBody User user) {
-        return service.saveUser(user);
+    public String saveUser(@RequestBody User user) {
+        service.saveUser(user);
+        return "User successfully saved";
     }
 
     @GetMapping("/{email}")
@@ -31,7 +32,7 @@ public class UsersController {
     }
 
     @PutMapping("update_user")
-    public User updateUser(User user) {
+    public User updateUser(@RequestBody User user) {
         return service.updateUser(user);
     }
 
